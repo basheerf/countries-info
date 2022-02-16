@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import CountriesList from "@/views/CountriesList.vue";
-import Details from "@/views/Details.vue";
+import CountryDetails from "@/views/CountryDetails.vue";
 
 const routes = [
   {
@@ -11,10 +11,10 @@ const routes = [
 
   },
   {
-    path: "/name/:name",
-    name: "Details",
+    path: "/alpha/:id",
+    name: "CountryDetails",
     props: true,
-    component: Details
+    component: CountryDetails
   },
   {
     path: "/about",

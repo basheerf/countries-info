@@ -1,35 +1,44 @@
 <template>
- <router-link
-    :to="{ name: 'EventDetails', params: { id: country.cca3 } }"
-    >
-   <div class="country-card">
+  
+    <div class="event-card">
+      <router-link
+    :to="{ name: 'CountryDetails', params: { id: country.cca3 } }"
+    > 
       <h4>{{ country.name.official }}</h4>
       <h4>{{ country.capital}}- {{country.region }}</h4>
+      <h4>{{ country.cca3}}</h4>
+      </router-link>
     </div>
+ 
 </template>
 
 <script>
-export default{
-    props: {
-        country: {
-            type: Object,
-            required: true
-        }
+export default {
+  props: {
+    country: {
+      type: Object,
+      required: true
     }
+  }
 }
-
 </script>
 
 <style scoped>
-.country-card {
+.event-card {
   padding: 20px;
-  flex: auto;
+  width: 250px;
   cursor: pointer;
   border: 1px solid #39495c;
   margin-bottom: 18px;
 }
-.country-card:hover {
+
+.event-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.event-link {
+  color: #2c3e50;
+  text-decoration: none;
 }
 </style>
