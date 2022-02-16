@@ -8,18 +8,6 @@
        </div>
      </div>
      
-    <router-link
-      :to="{ name: 'CountriesList', query: { page: page - 1 } }"
-      rel="prev"
-      v-if="page != 1"
-      >Prev Page</router-link
-    >
-
-    <router-link
-      :to="{ name: 'CountriesList', query: { page: page + 1 } }"
-      rel="next"
-      >Next Page</router-link
-    >
   </div>
  
 </template>
@@ -47,8 +35,7 @@ export default {
 
     created() {
     watchEffect(() => {
-      this.events = null 
-      CountryApi.getCountries(6, this.page)
+      CountryApi.getCountries()
         .then(response => {
           this.countries = response.data
           this.totalPage = response.headers["x-total-count"]

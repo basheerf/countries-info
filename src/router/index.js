@@ -7,8 +7,6 @@ const routes = [
     path: "/",
     name: "CountriesList",
     component: CountriesList,
-    props: (route) => ({ page: parseInt(route.query.page) || 1 }),
-
   },
   {
     path: "/alpha/:id",
