@@ -1,12 +1,13 @@
 <template>
   <div class="countries">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="Vue logo" src="../assets/world.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
      <div class="row">
        <div class="col-md-4" v-for="country in countries" :key="country.id" >
          <CountryCard :country="country" />
        </div>
      </div>
+     
     <router-link
       :to="{ name: 'CountriesList', query: { page: page - 1 } }"
       rel="prev"
@@ -47,10 +48,10 @@ export default {
     created() {
     watchEffect(() => {
       this.events = null 
-      CountryApi.getCountries(2, this.page)
+      CountryApi.getCountries(6, this.page)
         .then(response => {
           this.countries = response.data
-          this.totalPage = response.headers['x-total-count']
+          this.totalPage = response.headers["x-total-count"]
         })
         .catch(error => {
           console.log(error)

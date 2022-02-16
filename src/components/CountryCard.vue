@@ -1,15 +1,20 @@
 <template>
-  
-    <div class="event-card">
+<div class="card-deck" style="margin-top:20px">
+<div class="card" style="height: 10rem">
       <router-link
     :to="{ name: 'CountryDetails', params: { id: country.cca3 } }"
     > 
-      <h4>{{ country.name.official }}</h4>
-      <h4>{{ country.capital}}- {{country.region }}</h4>
-      <h4>{{ country.cca3}}</h4>
-      </router-link>
+  <div class="card-body">
+    <div class="align-items-center">
+    <h5>{{country.name.official}}</h5>
+    <p>{{ country.capital}}- {{country.region }}</p>
     </div>
- 
+  </div>
+       </router-link>
+  </div>
+  </div>
+
+
 </template>
 
 <script>
