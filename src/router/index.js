@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import CountriesList from "../views/CountriesList.vue";
+import CountriesList from "@/views/CountriesList.vue";
+import Details from "@/views/Details.vue";
 
 const routes = [
   {
@@ -8,6 +9,12 @@ const routes = [
     component: CountriesList,
     props: (route) => ({ page: parseInt(route.query.page) || 1 }),
 
+  },
+  {
+    path: "/name/:name",
+    name: "Details",
+    props: true,
+    component: Details
   },
   {
     path: "/about",

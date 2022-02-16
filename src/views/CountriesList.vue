@@ -26,6 +26,7 @@
 <script>
 // @ is an alias to /src
 import CountryCard from "@/components/CountryCard.vue";
+
 import CountryApi from "@/api/CountryApi.js";
 import { watchEffect } from 'vue' 
 
@@ -34,6 +35,7 @@ export default {
   props: ['page'],
   components: {
     CountryCard,
+ 
   },
   data(){
     return{

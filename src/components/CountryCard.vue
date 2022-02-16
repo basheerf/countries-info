@@ -1,5 +1,7 @@
 <template>
-
+ <router-link
+    :to="{ name: 'EventDetails', params: { id: country.cca3 } }"
+    >
    <div class="country-card">
       <h4>{{ country.name.official }}</h4>
       <h4>{{ country.capital}}- {{country.region }}</h4>
